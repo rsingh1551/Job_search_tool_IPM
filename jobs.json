@@ -1,7 +1,22 @@
 {
-  "last_updated": "2026-05-01T16:13:39.230Z",
-  "total_fetched_today": 15,
+  "last_updated": "2026-05-02T15:34:16.428Z",
+  "total_fetched_today": 18,
   "jobs": [
+    {
+      "id": "jsearch_m4OMRKNYNdUHkSiTAAAAAA==",
+      "role": "(USA) Staff, Product Manager - Analytics Platforms",
+      "company": "Walmart",
+      "link": "https://www.ziprecruiter.com/c/Walmart/Job/(USA)-Staff,-Product-Manager-Analytics-Platforms/-in-Rogers,AR?jid=9729df66e023d6ce",
+      "posted_date": "2026-04-27",
+      "location": "Rogers, Arkansas",
+      "active": true,
+      "resume_link": "resumes/resume_jsearch_m4OMRKNYNdUHkSiTAAAAAA==.html",
+      "application_status": "Not Applied",
+      "match_score": 14,
+      "source": "ZipRecruiter",
+      "description_snippet": "Position Summary...\n\nWhat you'll do...The Analytics Platform & Data Partnerships Team is looking for a Staff, Product Manager to own and evolve our enterprise Analytics platforms. In this role, you will be responsible for driving platform strategy, enabling data-driven decision-making tools, and delivering high-impact analytics capabilities for a broad and diverse user base. You will drive the development of customer personas, customer journeys, platform KPIs, key results, product requirements, and prioritization to improve overall customer experience. You will work closely with engineering an",
+      "resume_match_score": 78
+    },
     {
       "id": "jsearch_GvAIK9PSudhYfLkAAAAAAA==",
       "role": "(USA) Principal, Product Manager, New Store Strategy and Geospatial",
@@ -48,6 +63,21 @@
       "resume_match_score": 62
     },
     {
+      "id": "jsearch_0W07xBkY2cfA9sNcAAAAAA==",
+      "role": "Product Manager",
+      "company": "TEKsystems",
+      "link": "https://careers.teksystems.com/us/en/job/JP-005977426/Product-Manager",
+      "posted_date": "2026-04-25",
+      "location": "Baltimore, Maryland",
+      "active": true,
+      "resume_link": "resumes/resume_jsearch_0W07xBkY2cfA9sNcAAAAAA==.html",
+      "application_status": "Not Applied",
+      "match_score": 9,
+      "source": "TEKsystems Careers",
+      "description_snippet": "Description\n\nThink of TEKsystems Global Services (TGS) as the growth solution for enterprises today. We unleash growth through technology, strategy, design, execution and operations with a customer-first mindset for bold business leaders. We deliver cloud, data and customer experience solutions. Our partnerships with leading cloud, design and business intelligence platforms fuel our expertise. We value deep relationships, dedication to serving others and inclusion. We drive positive outcomes for our people and our business, and we stay true to our commitments and act in harmony with our words.",
+      "resume_match_score": 72
+    },
+    {
       "id": "jsearch_DVN60njBk9etoZx1AAAAAA==",
       "role": "Digital Web Product Manager",
       "company": "CVS Health",
@@ -78,19 +108,19 @@
       "resume_match_score": 72
     },
     {
-      "id": "jsearch_QVE6AxUZ73l4hMvgAAAAAA==",
-      "role": "Product Manager - 26-04649",
-      "company": "NavitasPartners",
-      "link": "https://bebee.com/us/jobs/product-manager-26-04649-navitaspartners-arlington-va--theirstack-672411497",
-      "posted_date": "2026-04-27",
-      "location": "Texas",
+      "id": "jsearch__EL__6s-LddmLBsqAAAAAA==",
+      "role": "Senior Product Manager",
+      "company": "Indeed",
+      "link": "https://www.adzuna.com/details/5714118697",
+      "posted_date": "2026-04-29",
+      "location": "Wyoming, Delaware",
       "active": true,
-      "resume_link": "resumes/resume_jsearch_QVE6AxUZ73l4hMvgAAAAAA==.html",
+      "resume_link": "resumes/resume_jsearch__EL__6s-LddmLBsqAAAAAA==.html",
       "application_status": "Not Applied",
       "match_score": 7,
-      "source": "BeBee",
-      "description_snippet": "Job Title: Product Manager\n\nLocation: Washington, DC\n\nDuration: 6 months\n\nPosition Overview\n\nWe are seeking a skilled Product Manager to join a dynamic security engineering team within the IT division. The role focuses on driving the strategy, design, deployment, and maintenance of security solutions across cloud, local, and hybrid environments. This is an exciting opportunity to contribute to security engineering initiatives at an impactful organization.\n\nKey Responsibilities\n\n• Product Backlog Management: Define, prioritize, and maintain the product backlog for security engineering initiativ",
-      "resume_match_score": 62
+      "source": "Adzuna",
+      "description_snippet": "**Our Mission** As the world's number 1 job site*, our mission is to help people get jobs. We strive to cultivate an inclusive and accessible workplace where all people feel comfortable being themselves. We're looking to grow our teams with more people who share our enthusiasm for innovation and creating the best experience for job seekers. (*Comscore, Total Visits, March 2025) **Day to Day** You will obsess over how information is leveraged by ensuring Enterprise Search serves as a shared context layer and unified foundation that enables employees to reliably find knowledge, history, and owne",
+      "resume_match_score": 60
     },
     {
       "id": "jsearch_igSgTZnIyZf3hBLQAAAAAA==",
@@ -111,7 +141,7 @@
       "role": "Global Product Manager- Core Portfolio",
       "company": "Abbott Laboratories",
       "link": "https://www.jobs.abbott/global/es/job/31146857/Global-Product-Manager-Core-Portfolio",
-      "posted_date": "2026-04-29",
+      "posted_date": "2026-04-30",
       "location": "Princeton, New Jersey",
       "active": true,
       "resume_link": "",
@@ -119,34 +149,6 @@
       "match_score": 5,
       "source": "Abbott Jobs",
       "description_snippet": "Working at Abbott\nAt Abbott, you can do work that matters, grow, and learn, care for yourself and your family, be your true self, and live a full life. You’ll also have access to:\n• Career development with an international company where you can grow the career you dream of.\n\n• Employees can qualify for free medical coverage in our Health Investment Plan (HIP) PPO medical plan in the next calendar year.\n\n• An excellent retirement savings plan with a high employer contribution.\n\n• Tuition reimbursement, the Freedom 2 Save student debt program, and FreeU education benefit - an affordable and conv"
-    },
-    {
-      "id": "jsearch_31j1AafANvfIRSR9AAAAAA==",
-      "role": "Lead Eng II, Tech Product Manager",
-      "company": "KPMG US",
-      "link": "https://www.linkedin.com/jobs/view/lead-eng-ii-tech-product-manager-at-kpmg-us-4407307360",
-      "posted_date": "2026-04-29",
-      "location": "Rochester, New York",
-      "active": true,
-      "resume_link": "",
-      "application_status": "Not Applied",
-      "match_score": 5,
-      "source": "LinkedIn",
-      "description_snippet": "Known for being a great place to work and build a career, KPMG provides audit, tax and advisory services for organizations in today's most important industries. Our growth is driven by delivering real results for our clients. It's also enabled by our culture, which encourages individual development, embraces an inclusive environment, rewards innovative excellence and supports our communities. With qualities like those, it's no wonder we're consistently ranked among the best companies to work for by Fortune Magazine, Consulting Magazine, Seramount, Fair360 and others. If you're as passionate ab"
-    },
-    {
-      "id": "jsearch_NKHvkooJZOfakRBoAAAAAA==",
-      "role": "Product Manager",
-      "company": "Exyte GmbH",
-      "link": "https://careers.exyte.net/global/fr/job/EGQEGGGLOBAL22706EXTERNALFRGLOBAL/Product-Manager",
-      "posted_date": "2026-04-29",
-      "location": "Portland, Oregon",
-      "active": true,
-      "resume_link": "",
-      "application_status": "Not Applied",
-      "match_score": 4,
-      "source": "Exyte",
-      "description_snippet": "DescriptionDiscover your exciting role\n\r\nThe Product Manager for Slurry Delivery Systems is a critical role within MEGA, responsible for owning and evolving our flagship slurry delivery products as we scale toward global market leadership.\n\nThis role sits at the intersection of customer needs, product strategy, engineering execution, and operational excellence. The Product Manager will be deeply involved in shaping MEGA 2.0, driving clarity, discipline, and purpose as we transition from custom-driven execution to scalable, platform-based growth.\n\nThis position will be actively mentored by seni"
     },
     {
       "id": "jsearch_Q0opCaIt9FLZISZ_AAAAAA==",
@@ -177,18 +179,46 @@
       "description_snippet": "Remote Product Manager Sr.\n\nThis position is posted by Jobgether on behalf of a partner company. We are currently looking for a Senior Product Manager - REMOTE. In this role, you will play a pivotal part in revolutionizing the health and wellness sector. As the leader of the product roadmap for various treatment categories, you will help shape the way consumers engage with healthcare. Your expertise will not only enhance customer experiences but will also aid in the development and launch of innovative solutions. This role is central in addressing personalized health needs and driving impactfu"
     },
     {
-      "id": "jsearch_mL_Z1w2iU6dDCr40AAAAAA==",
-      "role": "Professional Learning Product Manager",
+      "id": "jsearch_ukwCjLEUDHL-NW6WAAAAAA==",
+      "role": "Product Manager CRE AI Platform (Flexible)",
+      "company": "SitusAMC",
+      "link": "https://www.talent.com/view?id=617323811785806720",
+      "posted_date": "2026-04-29",
+      "location": "United States",
+      "active": true,
+      "resume_link": "",
+      "application_status": "Not Applied",
+      "match_score": 2,
+      "source": "Talent.com",
+      "description_snippet": "SitusAMC is seeking an experienced System Analyst in Charleston, WV, with a focus on mortgage technology. The role demands 5+ years in relevant experience, involving system analysis, project management, and stakeholder collaboration. Key responsibilities include collecting user requirements, tracking project progress, and problem-solving. The position offers a competitive salary ranging from $100,000 to $125,000 annually, along with benefits like medical coverage, PTO, and 401K. Ideal candidates should possess strong communication skills and proficiency in Microsoft Office, particularly Excel."
+    },
+    {
+      "id": "jsearch_tRVNR2Ej9yK67W_aAAAAAA==",
+      "role": "Product Manager",
+      "company": "Robert Half",
+      "link": "https://www.roberthalf.com/us/en/job/belleair-fl/product-manager/01070-0013426573-usen",
+      "posted_date": "2026-04-26",
+      "location": "Belleair, Florida",
+      "active": true,
+      "resume_link": "",
+      "application_status": "Not Applied",
+      "match_score": 2,
+      "source": "Robert Half",
+      "description_snippet": "We are looking for a Product Manager to lead product planning and execution for web-based solutions in Clearwater, Florida. This role combines strategic ownership with hands-on collaboration across technical and business teams to shape features, improve product performance, and support data-informed decisions. The ideal candidate brings strong experience with web analytics, agile delivery practices, and an understanding of backend data configuration in Node.js environments.Responsibilities:• Define product priorities and translate business goals into a well-structured roadmap and actionable ba"
+    },
+    {
+      "id": "jsearch_iACyzG-v485BKbaQAAAAAA==",
+      "role": "Product Manager for Live Services",
       "company": "VirtualVocations",
-      "link": "https://www.talent.com/view?id=535316423347080925",
-      "posted_date": "2026-04-27",
-      "location": "Fairfax, Virginia",
+      "link": "https://www.talent.com/view?id=617246389010830208",
+      "posted_date": "2026-04-29",
+      "location": "Alexandria, Virginia",
       "active": true,
       "resume_link": "",
       "application_status": "Not Applied",
       "match_score": 1,
       "source": "Talent.com",
-      "description_snippet": "A company is looking for a Professional Learning Product Manager to lead the Professional Learning team.\n\nKey Responsibilities\n\nDevelop strategies for professional learning products and define compelling offerings to meet organizational goals\n\nManage and mentor a team of content developers, fostering an inclusive and productive work environment\n\nSet goals, evaluate product performance, and collaborate with cross-functional teams to enhance professional learning offerings\n\nRequired Qualifications\n\n4+ years of experience in designing and developing professional learning experiences, preferably i"
+      "description_snippet": "A company is looking for a Product Manager for Live Services.\n\nKey Responsibilities\n\nSupport product management for multiple live and upcoming titles, ensuring successful launch and management of live service games\n\nEvaluate design specifications, identify risks, and contribute to feature definition and validation roadmaps\n\nCommunicate performance results and recommendations to stakeholders, connecting player experience to business outcomes\n\nRequired Qualifications\n\nExperience in product management for live service games, preferably AAA Console / PC titles\n\nStrong understanding of game systems"
     },
     {
       "id": "jsearch_w_mnk0HBpqst6H47AAAAAA==",
@@ -205,6 +235,20 @@
       "description_snippet": "Job Title: Product Manager\n\nLocation: Reston, VA (Remote)\n\nDuration:12+ Months Contract\n\nPURPOSE:\n\nManages end-to-end management of Digital Products from the initial kickoff to coordinating major launch milestones to maintaining and enhancing program performance over time. Guides clients through key decisions, communicates and coordinates activities internally and across departments. Works on new needs for process and improvements and identifies and articulates internal client needs to the technology team.\n\nExperience:\n\n10 years experience in a leadership roles with 3+ years in a product manag"
     },
     {
+      "id": "jsearch_mL_Z1w2iU6dDCr40AAAAAA==",
+      "role": "Professional Learning Product Manager",
+      "company": "VirtualVocations",
+      "link": "https://www.talent.com/view?id=535316423347080925",
+      "posted_date": "2026-04-27",
+      "location": "Fairfax, Virginia",
+      "active": true,
+      "resume_link": "",
+      "application_status": "Not Applied",
+      "match_score": 1,
+      "source": "Talent.com",
+      "description_snippet": "A company is looking for a Professional Learning Product Manager to lead the Professional Learning team.\n\nKey Responsibilities\n\nDevelop strategies for professional learning products and define compelling offerings to meet organizational goals\n\nManage and mentor a team of content developers, fostering an inclusive and productive work environment\n\nSet goals, evaluate product performance, and collaborate with cross-functional teams to enhance professional learning offerings\n\nRequired Qualifications\n\n4+ years of experience in designing and developing professional learning experiences, preferably i"
+    },
+    {
       "id": "jsearch_8WY0IHCDKwXqo6lcAAAAAA==",
       "role": "Product Manager @ Social app startup",
       "company": "Cheez",
@@ -219,19 +263,47 @@
       "description_snippet": "Cheez is a new app that sends you the pictures that your friends take of you, powered by facial recognition. See the iOS app https://apple.co/3KLnpTa or the Android app https://cheez.cc/449QC0Q Responsibilities: Assist in defining product requirements, objectives, and key results based on user needs and market research\n\nCollaborate with the Founder/CEO, Engineering & Design team (ex-Google/Apple/Facebook/Microsoft) to prioritize, plan, and execute product roadmaps and sprint plans\n\nDevelop user stories, acceptance criteria, and detailed product specifications to communicate feature requirement"
     },
     {
-      "id": "jsearch_m4OMRKNYNdUHkSiTAAAAAA==",
-      "role": "(USA) Staff, Product Manager - Analytics Platforms",
-      "company": "Walmart",
-      "link": "https://www.ziprecruiter.com/c/Walmart/Job/(USA)-Staff,-Product-Manager-Analytics-Platforms/-in-Rogers,AR?jid=9729df66e023d6ce",
+      "id": "jsearch_QVE6AxUZ73l4hMvgAAAAAA==",
+      "role": "Product Manager - 26-04649",
+      "company": "NavitasPartners",
+      "link": "https://bebee.com/us/jobs/product-manager-26-04649-navitaspartners-arlington-va--theirstack-672411497",
       "posted_date": "2026-04-27",
-      "location": "Rogers, Arkansas",
+      "location": "Texas",
       "active": true,
-      "resume_link": "resumes/resume_jsearch_m4OMRKNYNdUHkSiTAAAAAA==.html",
+      "resume_link": "resumes/resume_jsearch_QVE6AxUZ73l4hMvgAAAAAA==.html",
       "application_status": "Not Applied",
-      "match_score": 14,
-      "source": "ZipRecruiter",
-      "description_snippet": "Position Summary...\n\nWhat you'll do...The Analytics Platform & Data Partnerships Team is looking for a Staff, Product Manager to own and evolve our enterprise Analytics platforms. In this role, you will be responsible for driving platform strategy, enabling data-driven decision-making tools, and delivering high-impact analytics capabilities for a broad and diverse user base. You will drive the development of customer personas, customer journeys, platform KPIs, key results, product requirements, and prioritization to improve overall customer experience. You will work closely with engineering an",
-      "resume_match_score": 78
+      "match_score": 7,
+      "source": "BeBee",
+      "description_snippet": "Job Title: Product Manager\n\nLocation: Washington, DC\n\nDuration: 6 months\n\nPosition Overview\n\nWe are seeking a skilled Product Manager to join a dynamic security engineering team within the IT division. The role focuses on driving the strategy, design, deployment, and maintenance of security solutions across cloud, local, and hybrid environments. This is an exciting opportunity to contribute to security engineering initiatives at an impactful organization.\n\nKey Responsibilities\n\n• Product Backlog Management: Define, prioritize, and maintain the product backlog for security engineering initiativ",
+      "resume_match_score": 62
+    },
+    {
+      "id": "jsearch_31j1AafANvfIRSR9AAAAAA==",
+      "role": "Lead Eng II, Tech Product Manager",
+      "company": "KPMG US",
+      "link": "https://www.linkedin.com/jobs/view/lead-eng-ii-tech-product-manager-at-kpmg-us-4407307360",
+      "posted_date": "2026-04-29",
+      "location": "Rochester, New York",
+      "active": true,
+      "resume_link": "",
+      "application_status": "Not Applied",
+      "match_score": 5,
+      "source": "LinkedIn",
+      "description_snippet": "Known for being a great place to work and build a career, KPMG provides audit, tax and advisory services for organizations in today's most important industries. Our growth is driven by delivering real results for our clients. It's also enabled by our culture, which encourages individual development, embraces an inclusive environment, rewards innovative excellence and supports our communities. With qualities like those, it's no wonder we're consistently ranked among the best companies to work for by Fortune Magazine, Consulting Magazine, Seramount, Fair360 and others. If you're as passionate ab"
+    },
+    {
+      "id": "jsearch_NKHvkooJZOfakRBoAAAAAA==",
+      "role": "Product Manager",
+      "company": "Exyte GmbH",
+      "link": "https://careers.exyte.net/global/fr/job/EGQEGGGLOBAL22706EXTERNALFRGLOBAL/Product-Manager",
+      "posted_date": "2026-04-29",
+      "location": "Portland, Oregon",
+      "active": true,
+      "resume_link": "",
+      "application_status": "Not Applied",
+      "match_score": 4,
+      "source": "Exyte",
+      "description_snippet": "DescriptionDiscover your exciting role\n\r\nThe Product Manager for Slurry Delivery Systems is a critical role within MEGA, responsible for owning and evolving our flagship slurry delivery products as we scale toward global market leadership.\n\nThis role sits at the intersection of customer needs, product strategy, engineering execution, and operational excellence. The Product Manager will be deeply involved in shaping MEGA 2.0, driving clarity, discipline, and purpose as we transition from custom-driven execution to scalable, platform-based growth.\n\nThis position will be actively mentored by seni"
     },
     {
       "id": "jsearch_j3QYcSW2TamG4niVAAAAAA==",
@@ -1017,21 +1089,6 @@
       "match_score": 12,
       "source": "UnitedHealth Group",
       "description_snippet": "Optum Tech is a global leader in health care innovation. Our teams develop cutting-edge solutions that help people live healthier lives and help make the health system work better for everyone. From advanced data analytics and AI to cybersecurity, we use innovative approaches to solve some of health care's most complex challenges. Your contributions here have the potential to change lives. Ready to build the next breakthrough? Join us to start Caring. Connecting. Growing together.\n\nWe are seeking a Senior Manager, Technical Product Management to lead and scale product capabilities across our h",
-      "resume_match_score": 72
-    },
-    {
-      "id": "jsearch_0W07xBkY2cfA9sNcAAAAAA==",
-      "role": "Product Manager",
-      "company": "TEKsystems",
-      "link": "https://careers.teksystems.com/us/en/job/JP-005977426/Product-Manager",
-      "posted_date": "2026-04-25",
-      "location": "Baltimore, Maryland",
-      "active": true,
-      "resume_link": "resumes/resume_jsearch_0W07xBkY2cfA9sNcAAAAAA==.html",
-      "application_status": "Not Applied",
-      "match_score": 9,
-      "source": "TEKsystems Careers",
-      "description_snippet": "Description\n\nThink of TEKsystems Global Services (TGS) as the growth solution for enterprises today. We unleash growth through technology, strategy, design, execution and operations with a customer-first mindset for bold business leaders. We deliver cloud, data and customer experience solutions. Our partnerships with leading cloud, design and business intelligence platforms fuel our expertise. We value deep relationships, dedication to serving others and inclusion. We drive positive outcomes for our people and our business, and we stay true to our commitments and act in harmony with our words.",
       "resume_match_score": 72
     },
     {
