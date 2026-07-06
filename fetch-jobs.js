@@ -30,12 +30,12 @@ const PROFILE_KEYWORDS = [
 ];
 
 async function fetchPage(page) {
-  const url = new URL('https://jsearch.p.rapidapi.com/search');
-  url.searchParams.set('query',           'Product Manager United States');
-  url.searchParams.set('page',            String(page));
-  url.searchParams.set('num_pages',       '1');
-  url.searchParams.set('date_posted',     'week');
-  url.searchParams.set('employment_types','FULLTIME');
+  const url = new URL('https://jsearch.p.rapidapi.com/search-v2');
+  url.searchParams.set('query',       'Product Manager');
+  url.searchParams.set('country',     'us');
+  url.searchParams.set('page',        String(page));
+  url.searchParams.set('num_pages',   '1');
+  url.searchParams.set('date_posted', 'week');
 
   console.log(`Fetching page ${page}...`);
   const res = await fetch(url.toString(), {
@@ -60,11 +60,16 @@ async function fetchPage(page) {
 
 async function fetchAllJobs() {
   let all = [];
-  for (let page = 1; page <= 10; page++) {
+  const seen = new Set();
+  // BASIC (free) JSearch has a limited monthly request budget — keep page count modest.
+  for (let page = 1; page <= 3; page++) {
     try {
       const results = await fetchPage(page);
-      all = all.concat(results);
-      if (results.length < 10) break; // no more pages
+      // Guard: if the API ignores pagination and returns an already-seen page, stop.
+      const fresh = results.filter(r => r.job_id && !seen.has(r.job_id));
+      fresh.forEach(r => seen.add(r.job_id));
+      all = all.concat(fresh);
+      if (fresh.length === 0 || results.length < 10) break; // no more (new) pages
       await new Promise(r => setTimeout(r, 500));
     } catch (err) {
       console.error(`  Skipping page ${page}: ${err.message}`);
