@@ -1,7 +1,12 @@
 #!/usr/bin/env node
-// generate-resume.js — Tailors resume using Claude Haiku
+// generate-resume.js — Tailors Rishabh Singh's resume per job using Claude Haiku.
 // Usage: node generate-resume.js --auto      (score>=7 jobs without resume)
 //        node generate-resume.js <job_id>    (specific job)
+//
+// Design: the full career (all roles + bullets) is FIXED factual data below.
+// Claude only (a) rewrites the Summary, (b) picks/lightly rephrases 3 Highlights,
+// and (c) reorders each role's REAL bullets so the JD-relevant ones lead.
+// Claude never invents experience, metrics, roles, or bullet text.
 
 const fs   = require('fs');
 const path = require('path');
@@ -18,40 +23,131 @@ const resumesDir  = path.join(__dirname, 'resumes');
 
 if (!fs.existsSync(resumesDir)) fs.mkdirSync(resumesDir, { recursive: true });
 
-// ── Base resume content (for Claude context only) ──
-const BASE_RESUME = `
-SUMMARY
-Technical Product Manager with 5+ years owning cloud infrastructure, internal developer platform, and enterprise data products at global scale. Proven track record driving measurable outcomes across both internal engineering platforms and external B2B customer-facing products, translating complex infrastructure constraints into scalable platform capabilities that protect revenue, accelerate delivery, and improve developer experience.
+// ── FIXED factual resume (source of truth — nothing here is ever invented by AI) ──
+const CANDIDATE = {
+  name:    'Rishabh Singh',
+  email:   'rishabhs@icloud.com',
+  phone:   '(312) 330-6260',
+  website: 'www.rishabhs.me',
+  location:'Los Angeles, CA · Open to Remote or Hybrid'
+};
 
-HIGHLIGHTS
-- Redesigned Bigtable architecture to resolve a critical credit data API performance crisis, reducing latency 91% (5s → 450ms), protecting $100M+ in SLA exposure, and generating $5M in annual revenue across enterprise B2B customers.
-- Conceived and shipped Admin Portal, a 0→1 self-service cloud infrastructure provisioning platform serving both internal engineering teams and external B2B enterprise customers globally, eliminating 95% of ServiceNow tickets and cutting customer onboarding time by 60% across 15+ teams.
-- Led platform reliability strategy across 100+ internal teams, reducing MTTR 45% and increasing release velocity 80% via AI-automation without incident growth.
+// Real highlights the model may choose from / lightly rephrase (metrics must stay intact).
+const HIGHLIGHTS = [
+  'Drove $15M year-one revenue and a 4.8 app rating for Okyo Garde by translating enterprise cybersecurity into intuitive consumer mobile experiences.',
+  'Validated a $450M HP SMB services opportunity by launching an 8-week no-code MVP, securing 45 customers, completing 230 jobs, and proving operational scalability.',
+  'Unlocked $22M incremental retail sales and 10K users by pivoting Bunnings from a failed marketplace into a SaaS workflow platform.',
+  'Lifted subscription upgrades 25% and retention 32% via personalized in-app journeys and engagement tools at Palo Alto Networks.',
+  'Created a $110M+ incremental opportunity at BCBSA by introducing a unified design system across 36 health plans.'
+];
 
-EXPERIENCE — Equifax, Technical Product Manager, Cloud Infrastructure & Data Platform (Feb 2020 – Nov 2025)
-Owned product strategy and roadmap for the Equifax Data Fabric, a cloud-native enterprise data platform consolidating 250B+ records from 100+ previously siloed sources and serving 800M+ consumers across 24 global markets and 7 GCP regions. Combined hands-on SRE execution with end-to-end TPM ownership across high-throughput data query APIs, self-service infrastructure tooling, and developer platforms for both internal engineering teams and external B2B enterprise customers.
+// All roles, in resume order. Bullets are verbatim and are NEVER rewritten by AI —
+// Claude may only return a reordering (permutation) of each role's bullet indices.
+const ROLES = [
+  {
+    company: 'Lvlon',
+    dates:   '2024 – Present',
+    title:   'Fractional Product Leader, SaaS & AI',
+    desc:    'Advise early-stage SaaS and payments teams on product strategy, workflow design, GTM validation, and pilot readiness.',
+    bullets: [
+      'Unlocked a $27M incremental revenue opportunity by translating workflows into a self-serve product strategy.',
+      'Advanced an AI concept from use-case definition to early UX, supporting customer validation and investor readiness.',
+      'Accelerated payments observability pilots with 3 enterprise customers by refining positioning and GTM execution.'
+    ]
+  },
+  {
+    company: 'Palo Alto Networks',
+    dates:   '2021 – 2024',
+    title:   'Senior Principal Product Manager',
+    desc:    'Joined as founding PM for the first consumer cybersecurity business, owning the multi-year app, platform, services, and GTM roadmap.',
+    bullets: [
+      'Generated $15M Y1 revenue and a 4.8 app rating on Okyo Garde, simplifying enterprise cybersecurity for consumers.',
+      'Raised activation over 20% via UX-led onboarding redesign, experimentation, and real-time behavioral insights.',
+      'Lifted subscription upgrades 25% and retention 32% via personalized in-app journeys and engagement tools.',
+      'Created $11M incremental revenue by piloting a white-glove installation service across 3 U.S. cities.',
+      'Drove $8M annual productivity gain by launching an AI Security Broker enabling secure GenAI access for 15K employees.',
+      'Boosted marketing efficiency 12% and performance 50% by centralizing workflows in a new Campaign Excellence hub.'
+    ]
+  },
+  {
+    company: 'Boston Consulting Group – Digital Ventures',
+    dates:   '2018 – 2021',
+    title:   'Product Lead, Venture Build & Strategy',
+    desc:    'Led product strategy for five venture-backed startups, taking ambiguous concepts from discovery through MVP, pilot validation, and commercialization.',
+    bullets: [
+      "Pivoted Bunnings' failed marketplace to SaaS, acquiring 10K tradie users and $22M incremental retail sales.",
+      'Delivered $5M Y1 revenue for HP SMB IT services by validating a $450M market via an 8-week no-code MVP pilot.',
+      'Secured 45 paying SMB clients and completed 230+ jobs with NPS above 80 by proving operational scalability.',
+      'Increased ADP PEO conversions 22% and reduced cycle time 60% through a digital self-serve onboarding experience.',
+      'Launched 5 corporate ventures delivering $250M+ in cumulative client impact through design-led product incubation.'
+    ]
+  },
+  {
+    company: 'Blue Cross Blue Shield Association',
+    dates:   '2016 – 2017',
+    title:   'Director of Product & Design, Consumer Experience',
+    desc:    'Built and led a 5-person CX product organization spanning product, UX, and research to modernize consumer digital engagement.',
+    bullets: [
+      'Drove a 35% engagement lift by integrating behavioral design, gamification, and personalized content pathways.',
+      'Reduced support costs 20% and raised satisfaction 15% by launching a redesigned plan-selection mobile product.',
+      "Created $110M+ incremental opportunity by introducing a unified 'Signature Experience' design system across 36 plans."
+    ]
+  },
+  {
+    company: 'PepsiCo',
+    dates:   '2015 – 2016',
+    title:   'Senior Product Marketing Manager, New Ventures',
+    desc:    "Incubated and launched new D2C brands and innovation pilots under PepsiCo's emerging business group.",
+    bullets: [
+      "Delivered $900K in the first 4 months through Popworks, PepsiCo's first D2C e-commerce launch.",
+      'Accelerated go-to-market 25% by coaching 40+ cross-functional executives in lean and design thinking.',
+      'Generated $65M pilot revenue by launching Imagine Snacks®, a health-focused kids brand under the Frito-Lay portfolio.'
+    ]
+  },
+  {
+    company: 'SC Johnson & Son',
+    dates:   '2009 – 2015',
+    title:   'Global Product Manager',
+    desc:    'Led 0-1 product innovation across the U.S. and China, managing a cross-functional team of 15 for global B2C launches.',
+    bullets: [
+      "Redefined Ziploc's market positioning from 'food protection efficacy' to 'enabling life organization'.",
+      'Delivered $130M Y1 revenue by developing three consumer products from concept to commercialization.',
+      'Drove $65M in revenue and earned a CEO award by integrating Ziploc products with a companion app ecosystem.'
+    ]
+  },
+  {
+    company: 'Altitude by Accenture',
+    dates:   '2007 – 2009',
+    title:   'Senior Product Designer',
+    desc:    'Led product design and user research for global consumer brands across physical and digital platforms.',
+    bullets: [
+      "Generated $5M category revenue with the Kryptonite Modulus lock, named to Popular Mechanics' Best List.",
+      'Identified a $270M market gap in garment-care innovation via user research and competitive analysis for Sunbeam.',
+      'Secured a $23M program extension and GE partnership through smart grid product strategy and roadmap development.'
+    ]
+  }
+];
 
-API Performance & Revenue Protection:
-- Eliminated a critical performance bottleneck in Equifax's highest-revenue credit data query API by redesigning Bigtable cluster architecture, reducing latency 91% from 5s to 450ms for millions of daily B2B enterprise queries.
-- Protected $100M+ in SLA exposure by stabilizing API performance during a high-growth enterprise demand surge across financial institutions and lenders.
-- Generated $5M in annual revenue by defining monetization strategy across upgraded enterprise Bigtable infrastructure tiers.
-- Improved enterprise customer retention 40% by restoring SLA compliance and sustained 99.9% service availability on Google Cloud.
+const SKILLS = [
+  { label: 'Product & Strategy', items: '0-1 Product Strategy, Discovery & Validation, Product Vision, Roadmaps, Experimentation, Monetization, GTM Validation, Marketplace Design' },
+  { label: 'Technology & Industry', items: 'AI-Enabled Products, B2B SaaS, SMB Products, Consumer Tech, Cybersecurity, Payments, Mobile Apps, Workflow Automation' },
+  { label: 'Leadership', items: 'Cross-Functional Leadership, Stakeholder Alignment, Executive Storytelling, Team Building, Mentorship, Customer Research, Behavioral Design' }
+];
 
-Self-Service Platform & Developer Productivity:
-- Reduced infrastructure provisioning time 60% by owning 0→1 launch of self-service Admin Portal.
-- Eliminated 95% of ServiceNow ticket volume and cut customer onboarding time by 60% by replacing manual provisioning workflows with a secure UI-based self-service platform.
-- Improved delivery velocity 40% across 15+ engineering teams by defining reusable Kubernetes deployment standards and self-service infrastructure workflows.
-- Reduced MTTR 45% by standardizing monitoring and on-call frameworks across 100+ engineering teams.
-- Increased release velocity 80% without incident growth by leading cross-functional reliability readiness tradeoffs and introducing AI-assisted incident automation.
-- Managed cloud infrastructure lifecycle across global platforms using Terraform (IaC), enabling consistent, auditable provisioning across GCP and AWS at scale.
+const EDUCATION = [
+  { school: 'Illinois Institute of Technology', degree: 'Master of Design, Institute of Design' },
+  { school: 'University of Pune', degree: 'Bachelor of Engineering' }
+];
 
-EDUCATION: George Mason University · Master of Science, Computer Engineering
-
-SKILLS
-Product & Strategy: Platform & Infrastructure Products, 0→1 Product Builds, Roadmapping, OKRs & KPI Design, Go-to-Market Strategy, SLA Governance, Developer Experience (DX), B2B SaaS, Monetization Strategy
-Cloud & Infrastructure: Google Cloud Platform (GCP), AWS, Kubernetes, Bigtable, BigQuery, API Design & Strategy, Observability & Monitoring, SLOs/SLIs, Infrastructure as Code (Terraform), Distributed Systems, Incident Management
-Leadership & Execution: Cross-Functional Leadership, Stakeholder Alignment, Executive Communication, Release Planning, Tradeoff Management, Agile / Scrum
-`;
+// ── Serialize the fixed resume for Claude's context (with bullet indices) ──
+function serializeResume() {
+  const roleText = ROLES.map(r => {
+    const bl = r.bullets.map((b, i) => `    [${i}] ${b}`).join('\n');
+    return `${r.company} — ${r.title} (${r.dates})\n  ${r.desc}\n${bl}`;
+  }).join('\n\n');
+  const hi = HIGHLIGHTS.map((h, i) => `  [${i}] ${h}`).join('\n');
+  return `CANDIDATE: ${CANDIDATE.name}\n\nSUMMARY BASIS: Principal Product Manager with 13 years building 0-1 products across consumer, SMB, SaaS, and marketplace models; design-trained and commercially grounded.\n\nHIGHLIGHT OPTIONS:\n${hi}\n\nEXPERIENCE:\n${roleText}`;
+}
 
 // ── Call Claude Haiku ──
 async function callClaude(prompt) {
@@ -77,21 +173,68 @@ async function callClaude(prompt) {
   return data.content[0].text;
 }
 
-// ── Build final HTML by injecting tailored content into template ──
+// ── Validate a returned index array is a true permutation of [0..n-1] ──
+function isPermutation(arr, n) {
+  if (!Array.isArray(arr) || arr.length !== n) return false;
+  const sorted = [...arr].map(Number).sort((a, b) => a - b);
+  return sorted.every((v, i) => v === i);
+}
+
+// ── Build final HTML: fixed roles (bullets reordered per emphasis), tailored top ──
 function buildHtml(tailored) {
   let html = fs.readFileSync(templatePath, 'utf8');
 
-  // Strip any <li>/<\/li> Claude may have included before wrapping
-  const stripLi = b => b.replace(/^\s*<li>/i, '').replace(/<\/li>\s*$/i, '').trim();
-  const liItems = arr => arr.map(b => `          <li>${stripLi(b)}</li>`).join('\n');
+  const esc = s => String(s);
+  const li  = arr => arr.map(b => `          <li>${esc(b)}</li>`).join('\n');
 
-  html = html.replace('{{SUMMARY_TEXT}}',    tailored.summary_text);
-  html = html.replace('{{HIGHLIGHTS_ITEMS}}', liItems(tailored.highlights_items));
-  html = html.replace('{{JOB_DESC}}',         tailored.job_desc);
-  html = html.replace('{{GROUP1_TITLE}}',     tailored.group1_title);
-  html = html.replace('{{GROUP1_BULLETS}}',   liItems(tailored.group1_bullets));
-  html = html.replace('{{GROUP2_TITLE}}',     tailored.group2_title);
-  html = html.replace('{{GROUP2_BULLETS}}',   liItems(tailored.group2_bullets));
+  // Highlights: use Claude's 3 (already plain strings), fall back to first 3 real ones.
+  const highlights = Array.isArray(tailored.highlights_items) && tailored.highlights_items.length
+    ? tailored.highlights_items.slice(0, 3)
+    : HIGHLIGHTS.slice(0, 3);
+
+  // Experience blocks: real roles; reorder each role's bullets if Claude gave a valid permutation.
+  const emphasis = tailored.emphasis_order || {};
+  const expBlocks = ROLES.map(r => {
+    const order = emphasis[r.company];
+    const bullets = isPermutation(order, r.bullets.length)
+      ? order.map(i => r.bullets[Number(i)])
+      : r.bullets;
+    return `      <div class="job">
+        <div class="job-header">
+          <span class="job-company">${esc(r.company)}</span>
+          <span class="job-dates">${esc(r.dates)}</span>
+        </div>
+        <div class="job-title">${esc(r.title)}</div>
+        <p class="job-desc">${esc(r.desc)}</p>
+        <div class="bullet-group">
+          <ul>
+${li(bullets)}
+          </ul>
+        </div>
+      </div>`;
+  }).join('\n');
+
+  const eduRows = EDUCATION.map(e =>
+    `    <div class="edu-row">
+      <span><span class="edu-school">${esc(e.school)}</span><span> · </span><span class="edu-degree">${esc(e.degree)}</span></span>
+    </div>`
+  ).join('\n');
+
+  const skillRows = SKILLS.map(s =>
+    `    <div class="skill-row"><strong>${esc(s.label)}:</strong> ${esc(s.items)}</div>`
+  ).join('\n');
+
+  // Replace ALL occurrences (EMAIL/WEBSITE appear twice: in href and as visible text).
+  const put = (key, val) => { html = html.split(key).join(val); };
+  put('{{NAME}}',              esc(CANDIDATE.name));
+  put('{{EMAIL}}',             esc(CANDIDATE.email));
+  put('{{PHONE}}',             esc(CANDIDATE.phone));
+  put('{{WEBSITE}}',           esc(CANDIDATE.website));
+  put('{{SUMMARY_TEXT}}',      esc(tailored.summary_text));
+  put('{{HIGHLIGHTS_ITEMS}}',  li(highlights));
+  put('{{EXPERIENCE_BLOCKS}}', expBlocks);
+  put('{{EDUCATION_ROWS}}',    eduRows);
+  put('{{SKILLS_ROWS}}',       skillRows);
 
   return html;
 }
@@ -102,40 +245,37 @@ async function generateResume(job) {
 
   const jd = job.description_snippet || '(no description available)';
 
-  const prompt = `You are helping tailor a resume for a specific job application. Your job is to lightly adjust specific sections so the resume better matches the job description — while keeping everything sounding natural and authentic, written in first person, not AI-generated.
+  const prompt = `You are tailoring MY resume for a specific job application. Adjust emphasis so it matches the job description, while keeping everything factual and written in a natural, first-person voice (not AI-sounding).
 
 STRICT RULES:
-- Do NOT invent new achievements, skills, or experiences not in the base resume
-- Keep ALL metrics exactly as-is (91%, $100M+, $5M, 60%, 95%, 45%, 80%, 40%)
-- Only reorder bullets, subtly rephrase, or swap emphasis to match JD priorities
-- Use <strong> tags only where the original resume uses them — do not over-bold
-- Tone must sound like a real person wrote it, not an AI
-- The job_desc field describes what I (Avinash) owned and delivered at Equifax — it is NOT about the target job. Write it in first person past tense ("Owned...", "Led...", "Delivered..."), based only on the base resume content. Lightly shift emphasis toward aspects of my Equifax experience that are most relevant to this JD, but it must always read as my actual experience at Equifax, never as a description of the job I am applying for
-- highlights_items: pick the 3 most relevant highlights from the base resume for this JD
-- group1 and group2: reorganize the existing bullets into two logical groups that fit this JD best
+- Do NOT invent any achievement, skill, role, company, date, or metric. Use ONLY what is in the resume below.
+- Do NOT rewrite the experience bullets. You may only REORDER each role's bullets by returning a permutation of that role's bullet indices, so the bullets most relevant to this JD appear first.
+- summary_text: 2-3 sentences, first person, based only on my real background; shift emphasis toward what this JD cares about.
+- highlights_items: pick the 3 most JD-relevant highlights from the HIGHLIGHT OPTIONS. You may lightly rephrase wording but MUST keep every metric exactly (dollar figures, %, ratings, counts).
+- emphasis_order: for each company, return an array that is a permutation of that role's bullet indices (e.g. [2,0,1]). Put JD-relevant bullets first. Include every index for that role exactly once. If a role has no clear relevance, return its indices in original order.
 
-BASE RESUME:
-${BASE_RESUME}
+RESUME (source of truth):
+${serializeResume()}
 
-JOB TITLE: ${job.role}
-COMPANY: ${job.company}
-JOB DESCRIPTION EXCERPT:
+TARGET JOB TITLE: ${job.role}
+TARGET COMPANY: ${job.company}
+TARGET JOB DESCRIPTION EXCERPT:
 ${jd}
 
-Return ONLY valid JSON, no markdown, no explanation. Array items must be plain text strings (no <li> tags — those are added automatically):
+Return ONLY valid JSON, no markdown, no explanation:
 {
   "match_percentage": <integer 0-100>,
-  "summary_text": "<p content — can use <strong> tags, 2-3 sentences>",
-  "highlights_items": [
-    "plain text bullet content, optional <strong> tags allowed",
-    "plain text bullet content",
-    "plain text bullet content"
-  ],
-  "job_desc": "<2-3 sentences in first person past tense describing what I owned/delivered at Equifax, NOT what the target job wants>",
-  "group1_title": "<group title text>",
-  "group1_bullets": ["plain text bullet content", "..."],
-  "group2_title": "<group title text>",
-  "group2_bullets": ["plain text bullet content", "..."]
+  "summary_text": "<2-3 sentence first-person summary>",
+  "highlights_items": ["highlight 1", "highlight 2", "highlight 3"],
+  "emphasis_order": {
+    "Lvlon": [0,1,2],
+    "Palo Alto Networks": [0,1,2,3,4,5],
+    "Boston Consulting Group – Digital Ventures": [0,1,2,3,4],
+    "Blue Cross Blue Shield Association": [0,1,2],
+    "PepsiCo": [0,1,2],
+    "SC Johnson & Son": [0,1,2],
+    "Altitude by Accenture": [0,1,2]
+  }
 }`;
 
   const raw = await callClaude(prompt);
@@ -145,10 +285,7 @@ Return ONLY valid JSON, no markdown, no explanation. Array items must be plain t
     const jsonMatch = raw.match(/\{[\s\S]*\}/);
     if (!jsonMatch) throw new Error('No JSON found in response');
     tailored = JSON.parse(jsonMatch[0]);
-    const required = ['summary_text','highlights_items','job_desc','group1_title','group1_bullets','group2_title','group2_bullets'];
-    for (const f of required) {
-      if (!tailored[f]) throw new Error(`Missing field: ${f}`);
-    }
+    if (!tailored.summary_text) throw new Error('Missing field: summary_text');
   } catch (e) {
     throw new Error(`Parse error: ${e.message}\nRaw: ${raw.substring(0, 300)}`);
   }
@@ -156,11 +293,9 @@ Return ONLY valid JSON, no markdown, no explanation. Array items must be plain t
   const filename = `resume_${job.id}.html`;
   fs.writeFileSync(path.join(resumesDir, filename), buildHtml(tailored));
 
-  console.log(`  Saved: resumes/${filename} (Match: ${tailored.match_percentage}%)`);
-  return {
-    resume_link:        `resumes/${filename}`,
-    resume_match_score: tailored.match_percentage
-  };
+  const pct = Number.isInteger(tailored.match_percentage) ? tailored.match_percentage : 0;
+  console.log(`  Saved: resumes/${filename} (Match: ${pct}%)`);
+  return { resume_link: `resumes/${filename}`, resume_match_score: pct };
 }
 
 // ── Main ──
@@ -220,4 +355,8 @@ async function main() {
   console.log('=== Done ===');
 }
 
-main().catch(err => { console.error('Fatal:', err); process.exit(1); });
+if (require.main === module) {
+  main().catch(err => { console.error('Fatal:', err); process.exit(1); });
+}
+
+module.exports = { buildHtml, isPermutation, ROLES, HIGHLIGHTS, CANDIDATE };

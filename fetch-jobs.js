@@ -12,13 +12,21 @@ if (!RAPIDAPI_KEY) {
 }
 
 const PROFILE_KEYWORDS = [
-  'cloud', 'infrastructure', 'platform', 'developer tools', 'data platform',
-  'api', 'gcp', 'aws', 'kubernetes', 'terraform', 'b2b', 'enterprise',
-  'saas', 'technical product manager', 'developer experience', 'devops',
-  'sre', 'reliability', 'fintech', 'financial services', 'microservices',
-  'distributed systems', 'observability', 'iac', 'data fabric',
-  'ai', 'machine learning', 'ml', 'data engineering', 'integration',
-  'automation', 'analytics', 'pipeline', 'security', 'compliance'
+  // Product craft & motion
+  'product strategy', '0-1', '0 to 1', 'discovery', 'experimentation', 'a/b test',
+  'monetization', 'subscription', 'retention', 'activation', 'growth', 'engagement',
+  'onboarding', 'personalization', 'go-to-market', 'gtm', 'roadmap', 'product-led',
+  // Domains & surfaces
+  'consumer', 'mobile', 'app', 'marketplace', 'saas', 'b2b', 'b2c', 'smb', 'd2c',
+  'ecommerce', 'e-commerce', 'platform', 'payments', 'fintech', 'cybersecurity',
+  'security', 'healthcare', 'workflow', 'automation',
+  // Technical & AI
+  'ai', 'artificial intelligence', 'machine learning', 'ml', 'genai', 'llm', 'api',
+  // Design & research lens (Rishabh's differentiator)
+  'ux', 'design', 'user research', 'customer research', 'behavioral',
+  // Seniority signals
+  'principal product manager', 'senior product manager', 'staff product manager',
+  'head of product', 'group product manager', 'product lead'
 ];
 
 async function fetchPage(page) {
@@ -126,11 +134,12 @@ async function main() {
 
   const rawResults = await fetchAllJobs();
 
-  // Filter to PM titles only, exclude senior leadership levels
-  const EXCLUDE_LEVELS = ['director', 'vice president', ' vp ', 'vp,', 'chief ', ' cpo', ' cto', 'head of', 'group manager'];
+  // Keep Senior / Staff / Principal PM + Head of Product; still exclude Director / VP / C-suite.
+  // (To also include Director/VP later, remove 'director' / 'vice president' / ' vp ' / 'vp,' below.)
+  const EXCLUDE_LEVELS = ['director', 'vice president', ' vp ', 'vp,', 'chief ', ' cpo', ' cto'];
   const pmOnly = rawResults.filter(r => {
     const title = (r.job_title || '').toLowerCase();
-    const isPM = title.includes('product manager') || title.includes('product owner');
+    const isPM = title.includes('product manager') || title.includes('product owner') || title.includes('head of product');
     const isTooSenior = EXCLUDE_LEVELS.some(lvl => title.includes(lvl));
     return isPM && !isTooSenior;
   });
@@ -173,7 +182,7 @@ async function main() {
   // Merge with old jobs (keep up to 200 total), re-apply seniority filter to old entries too
   const isTooSenior = role => {
     const t = (role || '').toLowerCase();
-    return ['director', 'vice president', ' vp ', 'vp,', 'chief ', ' cpo', ' cto', 'head of', 'group manager']
+    return ['director', 'vice president', ' vp ', 'vp,', 'chief ', ' cpo', ' cto']
       .some(lvl => t.includes(lvl));
   };
   const newLinks  = new Set(processed.map(j => j.link));

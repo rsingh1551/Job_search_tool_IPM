@@ -1,7 +1,7 @@
 // main.js — Job Search Tracker Dashboard
 
-const GITHUB_ACTIONS_URL    = 'https://github.com/sajjavenkataavinash/Job_search_tool/actions/workflows/fetch-jobs.yml';
-const GITHUB_REPO           = 'sajjavenkataavinash/Job_search_tool';
+const GITHUB_ACTIONS_URL    = 'https://github.com/rsingh1551/Job_search_tool_IPM/actions/workflows/fetch-jobs.yml';
+const GITHUB_REPO           = 'rsingh1551/Job_search_tool_IPM';
 const RESUME_WORKFLOW_FILE  = 'generate-resume.yml';
 
 // ── Modal state ──

@@ -1,33 +1,68 @@
-VENKATA AVINASH SAJJA
-sajjavenkataavinash@gmail.com | linkedin.com/in/venkataavinash-sajja-tpm | Atlanta Metropolitan Area | Open to Remote or Hybrid
+RISHABH SINGH
+rishabhs@icloud.com | www.rishabhs.me | (312) 330-6260 | Los Angeles, CA | Open to Remote or Hybrid
 
 PROFESSIONAL SUMMARY
-Senior Technical Product Manager with 6+ years of experience driving cloud infrastructure, data platform, and API products at enterprise scale. Proven track record delivering B2B SaaS solutions on GCP and AWS, leading cross-functional engineering teams, and translating complex technical requirements into measurable business outcomes across financial services and FinTech domains.
+Principal Product Manager with 13 years building 0-1 products across consumer, SMB, SaaS, and marketplace models. Design-trained and commercially grounded, with a record of turning ambiguous customer problems into intuitive products, validated business models, and measurable growth. Strongest where customer insight, product judgment, GTM alignment, and cross-functional execution all matter.
+
+HIGHLIGHTS
+- Drove $15M year-one revenue and a 4.8 app rating for Okyo Garde by translating enterprise cybersecurity into intuitive consumer mobile experiences.
+- Validated a $450M HP SMB services opportunity by launching an 8-week no-code MVP, securing 45 customers, completing 230 jobs, and proving operational scalability.
+- Unlocked $22M incremental retail sales and 10K users by pivoting Bunnings from a failed marketplace into a SaaS workflow platform.
 
 EXPERIENCE
-Equifax | Senior Technical Product Manager | Atlanta Metropolitan Area | Feb 2022 – Present
-(Started as Contractor, converted to Full-time · Feb 2022)
 
-Platform & Infrastructure:
-- Owned product roadmap for cloud infrastructure platform serving 450+ internal engineering teams and external B2B enterprise customers globally
-- Led migration of monolithic credit API to microservices architecture, achieving 91% uptime SLA and 450ms p99 latency on GCP
-- Drove $100M+ revenue product lines through API-first platform strategy, enabling 50+ enterprise integrations across financial services clients
-- Managed $5M annual infrastructure budget across GCP and AWS, optimizing cost and performance trade-offs
-- Partnered with SRE and DevOps teams to implement observability stack (Datadog, distributed tracing), reducing MTTR by 40%
-- Led IaC adoption initiative resulting in 95% of infrastructure provisioned via Terraform, improving consistency and deployment speed
+Lvlon — Fractional Product Leader, SaaS & AI (2024 – Present)
+Advise early-stage SaaS and payments teams on product strategy, workflow design, GTM validation, and pilot readiness.
+- Unlocked a $27M incremental revenue opportunity by translating workflows into a self-serve product strategy.
+- Advanced an AI concept from use-case definition to early UX, supporting customer validation and investor readiness.
+- Accelerated payments observability pilots with 3 enterprise customers by refining positioning and GTM execution.
 
-Developer Experience & Data:
-- Reduced developer onboarding time by 60% through self-service infrastructure tooling built on Kubernetes and Terraform
-- Defined and shipped data fabric platform features enabling real-time credit decisioning for enterprise B2B customers
-- Collaborated with cross-functional stakeholders (engineering, security, compliance) to deliver on regulatory requirements without compromising platform velocity
-- Built and maintained product roadmaps, OKRs, and sprint plans across distributed engineering teams using Agile/Scrum methodology
-- Drove developer experience improvements including API design standards, SDK tooling, and self-service documentation portals
+Palo Alto Networks — Senior Principal Product Manager (2021 – 2024)
+Joined as founding PM for the first consumer cybersecurity business, owning the multi-year app, platform, services, and GTM roadmap.
+- Generated $15M Y1 revenue and a 4.8 app rating on Okyo Garde, simplifying enterprise cybersecurity for consumers.
+- Raised activation over 20% via UX-led onboarding redesign, experimentation, and real-time behavioral insights.
+- Lifted subscription upgrades 25% and retention 32% via personalized in-app journeys and engagement tools.
+- Created $11M incremental revenue by piloting a white-glove installation service across 3 U.S. cities.
+- Drove $8M annual productivity gain by launching an AI Security Broker enabling secure GenAI access for 15K employees.
+- Boosted marketing efficiency 12% and performance 50% by centralizing workflows in a new Campaign Excellence hub.
+
+Boston Consulting Group – Digital Ventures — Product Lead, Venture Build & Strategy (2018 – 2021)
+Led product strategy for five venture-backed startups, taking ambiguous concepts from discovery through MVP, pilot validation, and commercialization.
+- Pivoted Bunnings' failed marketplace to SaaS, acquiring 10K tradie users and $22M incremental retail sales.
+- Delivered $5M Y1 revenue for HP SMB IT services by validating a $450M market via an 8-week no-code MVP pilot.
+- Secured 45 paying SMB clients and completed 230+ jobs with NPS above 80 by proving operational scalability.
+- Increased ADP PEO conversions 22% and reduced cycle time 60% through a digital self-serve onboarding experience.
+- Launched 5 corporate ventures delivering $250M+ in cumulative client impact through design-led product incubation.
+
+Blue Cross Blue Shield Association — Director of Product & Design, Consumer Experience (2016 – 2017)
+Built and led a 5-person CX product organization spanning product, UX, and research to modernize consumer digital engagement.
+- Drove a 35% engagement lift by integrating behavioral design, gamification, and personalized content pathways.
+- Reduced support costs 20% and raised satisfaction 15% by launching a redesigned plan-selection mobile product.
+- Created $110M+ incremental opportunity by introducing a unified 'Signature Experience' design system across 36 plans.
+
+PepsiCo — Senior Product Marketing Manager, New Ventures (2015 – 2016)
+Incubated and launched new D2C brands and innovation pilots under PepsiCo's emerging business group.
+- Delivered $900K in the first 4 months through Popworks, PepsiCo's first D2C e-commerce launch.
+- Accelerated go-to-market 25% by coaching 40+ cross-functional executives in lean and design thinking.
+- Generated $65M pilot revenue by launching Imagine Snacks®, a health-focused kids brand under the Frito-Lay portfolio.
+
+SC Johnson & Son — Global Product Manager (2009 – 2015)
+Led 0-1 product innovation across the U.S. and China, managing a cross-functional team of 15 for global B2C launches.
+- Redefined Ziploc's market positioning from 'food protection efficacy' to 'enabling life organization'.
+- Delivered $130M Y1 revenue by developing three consumer products from concept to commercialization.
+- Drove $65M in revenue and earned a CEO award by integrating Ziploc products with a companion app ecosystem.
+
+Altitude by Accenture — Senior Product Designer (2007 – 2009)
+Led product design and user research for global consumer brands across physical and digital platforms.
+- Generated $5M category revenue with the Kryptonite Modulus lock, named to Popular Mechanics' Best List.
+- Identified a $270M market gap in garment-care innovation via user research and competitive analysis for Sunbeam.
+- Secured a $23M program extension and GE partnership through smart grid product strategy and roadmap development.
 
 EDUCATION
-George Mason University | Bachelor's Degree
+Illinois Institute of Technology — Master of Design, Institute of Design
+University of Pune — Bachelor of Engineering
 
 SKILLS
-Cloud & Infrastructure: GCP, AWS, Kubernetes, Terraform, IaC, Microservices, Distributed Systems, Container Orchestration
-Product Management: Technical Product Management, Roadmap Planning, OKRs, Agile/Scrum, API Design, B2B SaaS, Enterprise Software
-Data & Observability: Data Platform, Data Fabric, Observability, Datadog, SRE, Reliability Engineering
-Domain Expertise: FinTech, Financial Services, Developer Experience, DevOps, Enterprise B2B, Compliance-driven Product Development
+Product & Strategy: 0-1 Product Strategy, Discovery & Validation, Product Vision, Roadmaps, Experimentation, Monetization, GTM Validation, Marketplace Design
+Technology & Industry: AI-Enabled Products, B2B SaaS, SMB Products, Consumer Tech, Cybersecurity, Payments, Mobile Apps, Workflow Automation
+Leadership: Cross-Functional Leadership, Stakeholder Alignment, Executive Storytelling, Team Building, Mentorship, Customer Research, Behavioral Design

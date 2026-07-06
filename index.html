@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Job Search Tracker — Venkata Avinash Sajja</title>
+  <title>Job Search Tracker — Rishabh Singh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,8 +14,8 @@
   <!-- ── Header ── -->
   <header class="header">
     <div class="header-left">
-      <h1>Job Search Tracker <span class="logo-dot">·</span> VAS</h1>
-      <p class="subtitle">TPM roles · US · Auto-fetched daily from LinkedIn</p>
+      <h1>Job Search Tracker <span class="logo-dot">·</span> RS</h1>
+      <p class="subtitle">PM &amp; product leadership roles · US · Auto-fetched daily</p>
     </div>
     <div class="header-right">
       <span class="last-updated" id="lastUpdated">Loading...</span>
@@ -134,7 +134,9 @@
 
   <script src="main.js"></script>
 
-  <!-- Datadog RUM -->
+  <!-- Datadog RUM (optional analytics) — disabled. The original author's keys were removed.
+       To enable your own monitoring, create a Datadog account (RUM → Applications),
+       paste your clientToken + applicationId below, and uncomment this block.
   <script>
     (function(h,o,u,n,d) {
       h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
@@ -143,8 +145,8 @@
     })(window,document,'script','https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js','DD_RUM')
     window.DD_RUM.onReady(function() {
       window.DD_RUM.init({
-        clientToken: 'pubbf36059a1095ac2f3a2560221ffdfa22',
-        applicationId: 'd5128190-143f-49bc-ae92-6977001e8ed8',
+        clientToken: 'YOUR_DATADOG_CLIENT_TOKEN',
+        applicationId: 'YOUR_DATADOG_APPLICATION_ID',
         site: 'datadoghq.com',
         service: 'job-search-tracker',
         env: 'production',
@@ -157,5 +159,6 @@
       })
     })
   </script>
+  -->
 </body>
 </html>
