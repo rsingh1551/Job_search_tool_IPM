@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rishabh Singh — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Page setup ── */
+    html, body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.45;
+      color: #1a1a1a;
+      background: #fff;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 0 auto;
+      padding: 0.25in 0.4in 0.2in 0.45in;
+      background: #fff;
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .header h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #111;
+      margin-bottom: 4px;
+    }
+
+    .contact-line {
+      font-size: 9pt;
+      color: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .contact-line a {
+      color: #1a6ea8;
+      text-decoration: none;
+    }
+
+    .contact-line .sep {
+      color: #aaa;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #111;
+      padding-bottom: 3px;
+      border-bottom: 1.5px solid #1a1a1a;
+      margin-bottom: 7px;
+    }
+
+    /* ── Summary ── */
+    .summary-text {
+      color: #222;
+      margin-bottom: 7px;
+    }
+
+    .summary-text strong {
+      color: #111;
+    }
+
+    .highlights-label {
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #111;
+    }
+
+    .highlights ul {
+      padding-left: 14px;
+    }
+
+    .highlights ul li {
+      margin-bottom: 3px;
+      color: #222;
+      list-style-type: disc;
+    }
+
+    /* ── Experience ── */
+    .job {
+      margin-bottom: 8px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .job-company {
+      font-weight: 700;
+      font-size: 10pt;
+      color: #1a6ea8;
+    }
+
+    .job-dates {
+      font-size: 9pt;
+      color: #444;
+      white-space: nowrap;
+    }
+
+    .job-title {
+      font-weight: 700;
+      font-size: 9.5pt;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .job-desc {
+      font-style: italic;
+      color: #222;
+      margin-bottom: 6px;
+      font-size: 9pt;
+    }
+
+    .bullet-group-title {
+      font-weight: 700;
+      color: #111;
+      margin-top: 5px;
+      margin-bottom: 3px;
+      font-size: 9pt;
+    }
+
+    .bullet-group ul {
+      padding-left: 14px;
+    }
+
+    .bullet-group ul li {
+      list-style-type: disc;
+      margin-bottom: 2.5px;
+      color: #222;
+    }
+
+    /* ── Education ── */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .edu-school {
+      font-weight: 700;
+      color: #1a6ea8;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      color: #111;
+    }
+
+    /* ── Skills ── */
+    .skill-row {
+      margin-bottom: 3px;
+      color: #222;
+    }
+
+    .skill-row strong {
+      color: #111;
+    }
+
+    /* ── Print ── */
+    @media print {
+      html, body { background: #fff; }
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 0.25in 0.4in 0.2in 0.45in;
+        box-shadow: none;
+      }
+      a { color: #1a6ea8 !important; text-decoration: none; }
+    }
+
+    /* Screen preview shadow */
+    @media screen {
+      body { background: #f0f0f0; padding: 32px 0; }
+      .page {
+        box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+        border-radius: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══ HEADER ══ -->
+  <div class="header">
+    <h1>Rishabh Singh</h1>
+    <div class="contact-line">
+      <a href="mailto:rishabhs@icloud.com">rishabhs@icloud.com</a>
+      <span class="sep">·</span>
+      <span>(312) 330-6260</span>
+      <span class="sep">·</span>
+      <a href="https://www.rishabhs.me">www.rishabhs.me</a>
+      <span class="sep">·</span>
+      <span>Los Angeles, CA</span>
+    </div>
+  </div>
+
+  <!-- ══ SUMMARY ══ -->
+  <div class="section">
+    <div class="section-title">Summary</div>
+    <p class="summary-text">I'm a Principal Product Manager with 13 years building enterprise and consumer products across SaaS, marketplace, and platform models. I excel at translating complex business priorities into product strategy and scaled delivery, with proven experience owning end-to-end roadmaps that drive measurable revenue and operational impact.</p>
+    <div class="highlights">
+      <p class="highlights-label">Highlights include:</p>
+      <ul>
+                  <li>Unlocked a $27M incremental revenue opportunity by translating workflows into a self-serve product strategy.</li>
+          <li>Validated a $450M HP SMB services opportunity by launching an 8-week no-code MVP, securing 45 customers, completing 230 jobs, and proving operational scalability.</li>
+          <li>Created $110M+ incremental opportunity at BCBSA by introducing a unified design system across 36 health plans.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ EXPERIENCE ══ -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Lvlon</span>
+          <span class="job-dates">2024 – Present</span>
+        </div>
+        <div class="job-title">Fractional Product Leader, SaaS & AI</div>
+        <p class="job-desc">Advise early-stage SaaS and payments teams on product strategy, workflow design, GTM validation, and pilot readiness.</p>
+        <div class="bullet-group">
+          <ul>
+          <li>Unlocked a $27M incremental revenue opportunity by translating workflows into a self-serve product strategy.</li>
+          <li>Accelerated payments observability pilots with 3 enterprise customers by refining positioning and GTM execution.</li>
+          <li>Advanced an AI concept from use-case definition to early UX, supporting customer validation and investor readiness.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Palo Alto Networks</span>
+          <span class="job-dates">2021 – 2024</span>
+        </div>
+        <div class="job-title">Senior Principal Product Manager</div>
+        <p class="job-desc">Joined as founding PM for the first consumer cybersecurity business, owning the multi-year app, platform, services, and GTM roadmap.</p>
+        <div class="bullet-group">
+          <ul>
+          <li>Lifted subscription upgrades 25% and retention 32% via personalized in-app journeys and engagement tools.</li>
+          <li>Raised activation over 20% via UX-led onboarding redesign, experimentation, and real-time behavioral insights.</li>
+          <li>Generated $15M Y1 revenue and a 4.8 app rating on Okyo Garde, simplifying enterprise cybersecurity for consumers.</li>
+          <li>Created $11M incremental revenue by piloting a white-glove installation service across 3 U.S. cities.</li>
+          <li>Drove $8M annual productivity gain by launching an AI Security Broker enabling secure GenAI access for 15K employees.</li>
+          <li>Boosted marketing efficiency 12% and performance 50% by centralizing workflows in a new Campaign Excellence hub.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Boston Consulting Group – Digital Ventures</span>
+          <span class="job-dates">2018 – 2021</span>
+        </div>
+        <div class="job-title">Product Lead, Venture Build & Strategy</div>
+        <p class="job-desc">Led product strategy for five venture-backed startups, taking ambiguous concepts from discovery through MVP, pilot validation, and commercialization.</p>
+        <div class="bullet-group">
+          <ul>
+          <li>Delivered $5M Y1 revenue for HP SMB IT services by validating a $450M market via an 8-week no-code MVP pilot.</li>
+          <li>Secured 45 paying SMB clients and completed 230+ jobs with NPS above 80 by proving operational scalability.</li>
+          <li>Pivoted Bunnings' failed marketplace to SaaS, acquiring 10K tradie users and $22M incremental retail sales.</li>
+          <li>Increased ADP PEO conversions 22% and reduced cycle time 60% through a digital self-serve onboarding experience.</li>
+          <li>Launched 5 corporate ventures delivering $250M+ in cumulative client impact through design-led product incubation.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Blue Cross Blue Shield Association</span>
+          <span class="job-dates">2016 – 2017</span>
+        </div>
+        <div class="job-title">Director of Product & Design, Consumer Experience</div>
+        <p class="job-desc">Built and led a 5-person CX product organization spanning product, UX, and research to modernize consumer digital engagement.</p>
+        <div class="bullet-group">
+          <ul>
+          <li>Created $110M+ incremental opportunity by introducing a unified 'Signature Experience' design system across 36 plans.</li>
+          <li>Drove a 35% engagement lift by integrating behavioral design, gamification, and personalized content pathways.</li>
+          <li>Reduced support costs 20% and raised satisfaction 15% by launching a redesigned plan-selection mobile product.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">PepsiCo</span>
+          <span class="job-dates">2015 – 2016</span>
+        </div>
+        <div class="job-title">Senior Product Marketing Manager, New Ventures</div>
+        <p class="job-desc">Incubated and launched new D2C brands and innovation pilots under PepsiCo's emerging business group.</p>
+        <div class="bullet-group">
+          <ul>
+          <li>Accelerated go-to-market 25% by coaching 40+ cross-functional executives in lean and design thinking.</li>
+          <li>Delivered $900K in the first 4 months through Popworks, PepsiCo's first D2C e-commerce launch.</li>
+          <li>Generated $65M pilot revenue by launching Imagine Snacks®, a health-focused kids brand under the Frito-Lay portfolio.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">SC Johnson & Son</span>
+          <span class="job-dates">2009 – 2015</span>
+        </div>
+        <div class="job-title">Global Product Manager</div>
+        <p class="job-desc">Led 0-1 product innovation across the U.S. and China, managing a cross-functional team of 15 for global B2C launches.</p>
+        <div class="bullet-group">
+          <ul>
+          <li>Delivered $130M Y1 revenue by developing three consumer products from concept to commercialization.</li>
+          <li>Redefined Ziploc's market positioning from 'food protection efficacy' to 'enabling life organization'.</li>
+          <li>Drove $65M in revenue and earned a CEO award by integrating Ziploc products with a companion app ecosystem.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Altitude by Accenture</span>
+          <span class="job-dates">2007 – 2009</span>
+        </div>
+        <div class="job-title">Senior Product Designer</div>
+        <p class="job-desc">Led product design and user research for global consumer brands across physical and digital platforms.</p>
+        <div class="bullet-group">
+          <ul>
+          <li>Secured a $23M program extension and GE partnership through smart grid product strategy and roadmap development.</li>
+          <li>Generated $5M category revenue with the Kryptonite Modulus lock, named to Popular Mechanics' Best List.</li>
+          <li>Identified a $270M market gap in garment-care innovation via user research and competitive analysis for Sunbeam.</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+
+  <!-- ══ EDUCATION ══ -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-row">
+      <span><span class="edu-school">Illinois Institute of Technology</span><span> · </span><span class="edu-degree">Master of Design, Institute of Design</span></span>
+    </div>
+    <div class="edu-row">
+      <span><span class="edu-school">University of Pune</span><span> · </span><span class="edu-degree">Bachelor of Engineering</span></span>
+    </div>
+  </div>
+
+  <!-- ══ SKILLS ══ -->
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <div class="skill-row"><strong>Product & Strategy:</strong> 0-1 Product Strategy, Discovery & Validation, Product Vision, Roadmaps, Experimentation, Monetization, GTM Validation, Marketplace Design</div>
+    <div class="skill-row"><strong>Technology & Industry:</strong> AI-Enabled Products, B2B SaaS, SMB Products, Consumer Tech, Cybersecurity, Payments, Mobile Apps, Workflow Automation</div>
+    <div class="skill-row"><strong>Leadership:</strong> Cross-Functional Leadership, Stakeholder Alignment, Executive Storytelling, Team Building, Mentorship, Customer Research, Behavioral Design</div>
+  </div>
+
+</div>
+</body>
+</html>
