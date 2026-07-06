@@ -53,7 +53,8 @@ async function fetchPage(page) {
   }
 
   const data = await res.json();
-  const results = data.data || [];
+  // search-v2 nests the array at data.jobs (older /search returned it at data).
+  const results = (data.data && data.data.jobs) || data.data || [];
   console.log(`  Page ${page}: ${results.length} jobs`);
   return results;
 }
